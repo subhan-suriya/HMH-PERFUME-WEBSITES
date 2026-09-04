@@ -1,13 +1,10 @@
 /* =========================================================
    HMH PERFUMES
-   MAIN JAVASCRIPT
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =====================================================
-       MOBILE MENU
-    ===================================================== */
+    /* ================= MOBILE MENU ================= */
 
     const menuBtn = document.querySelector(".menu-btn");
     const navMenu = document.querySelector(".nav-menu");
@@ -19,161 +16,112 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         navMenu.querySelectorAll("a").forEach(link => {
-
             link.addEventListener("click", () => {
                 navMenu.classList.remove("open");
             });
-
         });
 
     }
 
 
-    /* =====================================================
-       PERFUME DATA
-    ===================================================== */
+    /* ================= GSAP ================= */
 
-    const perfumes = [
-
-        {
-            title: "9PM AFNAN",
-            description:
-                "A rich and captivating fragrance created for confidence, elegance and unforgettable evenings.",
-            meta:
-                "LONG LASTING · PREMIUM FRAGRANCE",
-            image:
-                "images/eb234a7c-7804-4485-a522-682d16050d8d.png"
-        },
-
-        {
-            title: "IMAGINATION",
-            description:
-                "A modern fragrance with an elegant and effortless character.",
-            meta:
-                "MODERN · ELEGANT · SIGNATURE",
-            image:
-                "images/53cffe72-a68c-437d-a3b4-0e9c0e7a6394.png"
-        },
-
-        {
-            title: "TUSCAN LEATHER",
-            description:
-                "Deep, sophisticated and distinctive, designed to leave a lasting impression.",
-            meta:
-                "DEEP · SOPHISTICATED · DISTINCTIVE",
-            image:
-                "images/d34f3a82-3964-4421-888d-22a8f9772a6f.png"
-        },
-
-        {
-            title: "DAVID BECKHAM",
-            description:
-                "Clean, sophisticated and timeless for everyday confidence.",
-            meta:
-                "TIMELESS · REFINED · CONFIDENT",
-            image:
-                "images/1832019a-c9d7-4a5f-a415-eadae083928e.png"
-        }
-
-    ];
-
-
-    /* =====================================================
-       PERFUME SCROLL ANIMATION
-    ===================================================== */
-
-    const bottle = document.getElementById("perfumeBottle");
-    const title = document.getElementById("perfumeTitle");
-    const description = document.getElementById("perfumeDescription");
-    const meta = document.getElementById("perfumeMeta");
-    const currentNumber = document.getElementById("currentNumber");
-    const showcase = document.querySelector(".perfume-showcase");
-
-    if (
-        bottle &&
-        title &&
-        description &&
-        meta &&
-        currentNumber &&
-        showcase &&
-        typeof gsap !== "undefined" &&
-        typeof ScrollTrigger !== "undefined"
-    ) {
+    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
 
         gsap.registerPlugin(ScrollTrigger);
 
+        const bottle = document.querySelector("#perfumeBottle");
+        const title = document.querySelector("#perfumeTitle");
+        const description = document.querySelector("#perfumeDescription");
+        const meta = document.querySelector("#perfumeMeta");
+        const number = document.querySelector("#currentNumber");
+        const scrollProgress = document.querySelector(".scroll-line div");
 
-        let currentIndex = 0;
+        const perfumes = [
+
+            {
+                name: "9PM AFNAN",
+                description:
+                    "A rich and captivating fragrance created for confidence, elegance and unforgettable evenings.",
+                meta:
+                    "LONG LASTING · PREMIUM FRAGRANCE",
+                image:
+                    "images/eb234a7c-7804-4485-a522-682d16050d8d.png"
+            },
+
+            {
+                name: "IMAGINATION",
+                description:
+                    "A fresh and modern fragrance with a refined character designed to stand out effortlessly.",
+                meta:
+                    "FRESH · MODERN · ELEGANT",
+                image:
+                    "images/53cffe72-a68c-437d-a3b4-0e9c0e7a6394.png"
+            },
+
+            {
+                name: "TUSCAN LEATHER",
+                description:
+                    "A bold and sophisticated fragrance with a deep personality and unmistakable presence.",
+                meta:
+                    "BOLD · DEEP · SOPHISTICATED",
+                image:
+                    "images/d34f3a82-3964-4421-888d-22a8f9772a6f.png"
+            },
+
+            {
+                name: "DAVID BECKHAM",
+                description:
+                    "A timeless and refined fragrance created for effortless everyday elegance.",
+                meta:
+                    "CLEAN · REFINED · TIMELESS",
+                image:
+                    "images/1832019a-c9d7-4a5f-a415-eadae083928e.png"
+            }
+
+        ];
 
 
-        function showPerfume(index) {
+        let current = 0;
+
+
+        function changePerfume(index) {
 
             const perfume = perfumes[index];
 
             if (!perfume) return;
 
-            currentIndex = index;
-
-            currentNumber.textContent =
-                String(index + 1).padStart(2, "0");
-
-            title.textContent = perfume.title;
-
-            description.textContent =
-                perfume.description;
-
-            meta.textContent =
-                perfume.meta;
-
+            current = index;
 
             gsap.to(
-                bottle,
+                [bottle, title, description, meta],
                 {
                     opacity: 0,
-                    scale: 0.88,
-                    rotation: -8,
-                    duration: 0.22,
-                    ease: "power2.out",
+                    y: 15,
+                    duration: 0.18,
                     onComplete: () => {
 
                         bottle.src = perfume.image;
+                        bottle.alt = perfume.name;
 
-                        bottle.alt =
-                            `${perfume.title} perfume`;
+                        title.textContent = perfume.name;
+                        description.textContent = perfume.description;
+                        meta.textContent = perfume.meta;
 
-                        gsap.fromTo(
-                            bottle,
-                            {
-                                opacity: 0,
-                                scale: 0.88,
-                                rotation: 8
-                            },
+                        number.textContent =
+                            String(index + 1).padStart(2, "0");
+
+                        gsap.to(
+                            [bottle, title, description, meta],
                             {
                                 opacity: 1,
-                                scale: 1,
-                                rotation: 0,
-                                duration: 0.5,
-                                ease: "power3.out"
+                                y: 0,
+                                duration: 0.35,
+                                stagger: 0.04
                             }
                         );
 
                     }
-                }
-            );
-
-
-            gsap.fromTo(
-                [title, description, meta],
-                {
-                    opacity: 0,
-                    y: 15
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.45,
-                    stagger: 0.06,
-                    ease: "power2.out"
                 }
             );
 
@@ -182,30 +130,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
         ScrollTrigger.create({
 
-            trigger: showcase,
+            trigger: ".perfume-showcase",
 
             start: "top top",
 
             end: "bottom bottom",
 
-            scrub: false,
+            scrub: true,
 
             onUpdate: self => {
 
-                const progress =
-                    self.progress;
+                const index = Math.min(
+                    perfumes.length - 1,
+                    Math.floor(self.progress * perfumes.length)
+                );
 
-                let index =
-                    Math.floor(
-                        progress * perfumes.length
-                    );
-
-                if (index >= perfumes.length) {
-                    index = perfumes.length - 1;
+                if (index !== current) {
+                    changePerfume(index);
                 }
 
-                if (index !== currentIndex) {
-                    showPerfume(index);
+                if (scrollProgress) {
+                    scrollProgress.style.height =
+                        `${Math.max(10, self.progress * 100)}px`;
                 }
 
             }
@@ -213,45 +159,41 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        gsap.fromTo(
-            bottle,
-            {
-                y: 40,
-                opacity: 0.7,
-                scale: 0.94
-            },
-            {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 1.2,
-                ease: "power3.out"
-            }
-        );
+        /* Bottle subtle movement */
+
+        gsap.to("#perfumeBottle", {
+
+            y: -18,
+
+            duration: 2.4,
+
+            ease: "sine.inOut",
+
+            repeat: -1,
+
+            yoyo: true
+
+        });
 
     }
 
 
-    /* =====================================================
-       CATEGORY FILTER
-    ===================================================== */
+    /* ================= CATEGORY FILTER ================= */
 
-    const filterButtons =
-        document.querySelectorAll(".filter-btn");
+    const categoryButtons =
+        document.querySelectorAll(".category-btn");
 
     const productCards =
         document.querySelectorAll(".product-card");
 
 
-    filterButtons.forEach(button => {
+    categoryButtons.forEach(button => {
 
         button.addEventListener("click", () => {
 
-            const category =
-                button.dataset.category;
+            const filter = button.dataset.filter;
 
-
-            filterButtons.forEach(btn => {
+            categoryButtons.forEach(btn => {
                 btn.classList.remove("active");
             });
 
@@ -260,12 +202,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             productCards.forEach(card => {
 
-                const cardCategory =
-                    card.dataset.category;
+                const category = card.dataset.category;
 
                 if (
-                    category === "all" ||
-                    category === cardCategory
+                    filter === "all" ||
+                    category === filter
                 ) {
 
                     card.style.display = "";
@@ -282,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     setTimeout(() => {
                         card.style.display = "none";
-                    }, 250);
+                    }, 200);
 
                 }
 
@@ -293,126 +234,122 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =====================================================
-       BUY NOW MODAL
-    ===================================================== */
+    /* ================= PURCHASE MODAL ================= */
 
     const modal =
-        document.getElementById("buyModal");
+        document.querySelector("#purchaseModal");
 
-    const modalClose =
-        document.getElementById("modalClose");
+    const closeModal =
+        document.querySelector("#closeModal");
 
-    const modalProduct =
-        document.getElementById("modalProduct");
+    const modalImage =
+        document.querySelector("#modalProductImage");
+
+    const modalName =
+        document.querySelector("#modalProductName");
+
+    const modalCategory =
+        document.querySelector("#modalCategory");
 
     const modalPrice =
-        document.getElementById("modalPrice");
+        document.querySelector("#modalProductPrice");
 
-    const modalTotal =
-        document.getElementById("modalTotal");
+    const quantityDisplay =
+        document.querySelector("#quantity");
 
-    const quantityValue =
-        document.getElementById("quantityValue");
-
-    const summaryQuantity =
-        document.getElementById("summaryQuantity");
+    const totalPrice =
+        document.querySelector("#totalPrice");
 
     const minusBtn =
-        document.getElementById("minusBtn");
+        document.querySelector("#minusBtn");
 
     const plusBtn =
-        document.getElementById("plusBtn");
+        document.querySelector("#plusBtn");
 
-    const checkoutForm =
-        document.getElementById("checkoutForm");
-
-
-    let selectedProduct = "";
     let selectedPrice = 0;
     let quantity = 1;
 
 
-    function formatPrice(number) {
+    function formatPrice(price) {
 
         return "PKR " +
-            Number(number).toLocaleString("en-PK");
+            Number(price).toLocaleString("en-PK");
 
     }
 
 
-    function updateOrderTotal() {
+    function updateTotal() {
 
-        const total =
-            selectedPrice * quantity;
+        totalPrice.textContent =
+            formatPrice(selectedPrice * quantity);
 
-        quantityValue.textContent =
+        quantityDisplay.textContent =
             quantity;
 
-        summaryQuantity.textContent =
-            quantity;
-
-        modalTotal.textContent =
-            formatPrice(total);
-
     }
 
 
-    function openBuyModal(product, price) {
+    document.querySelectorAll(".buy-btn").forEach(button => {
 
-        selectedProduct = product;
+        button.addEventListener("click", () => {
 
-        selectedPrice = Number(price);
+            const card =
+                button.closest(".product-card");
 
-        quantity = 1;
+            selectedPrice =
+                Number(card.dataset.price);
 
-        modalProduct.textContent =
-            product;
+            quantity = 1;
 
-        modalPrice.textContent =
-            formatPrice(selectedPrice);
+            modalImage.src =
+                card.dataset.image;
 
-        updateOrderTotal();
+            modalImage.alt =
+                card.dataset.name;
 
-        modal.classList.add("active");
+            modalName.textContent =
+                card.dataset.name;
 
-        document.body.style.overflow = "hidden";
+            modalCategory.textContent =
+                card.dataset.category.toUpperCase();
 
-    }
+            modalPrice.textContent =
+                formatPrice(selectedPrice);
+
+            updateTotal();
+
+            modal.classList.add("open");
+
+            document.body.style.overflow = "hidden";
+
+        });
+
+    });
 
 
-    function closeBuyModal() {
+    function closePurchaseModal() {
 
-        modal.classList.remove("active");
+        modal.classList.remove("open");
 
         document.body.style.overflow = "";
 
     }
 
 
-    document
-        .querySelectorAll(".order-btn, .quick-buy")
-        .forEach(button => {
-
-            button.addEventListener("click", () => {
-
-                openBuyModal(
-                    button.dataset.product,
-                    button.dataset.price
-                );
-
-            });
-
-        });
+    if (closeModal) {
+        closeModal.addEventListener(
+            "click",
+            closePurchaseModal
+        );
+    }
 
 
-    if (minusBtn) {
+    if (modal) {
 
-        minusBtn.addEventListener("click", () => {
+        modal.addEventListener("click", event => {
 
-            if (quantity > 1) {
-                quantity--;
-                updateOrderTotal();
+            if (event.target === modal) {
+                closePurchaseModal();
             }
 
         });
@@ -424,9 +361,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         plusBtn.addEventListener("click", () => {
 
-            if (quantity < 20) {
-                quantity++;
-                updateOrderTotal();
+            quantity++;
+
+            updateTotal();
+
+        });
+
+    }
+
+
+    if (minusBtn) {
+
+        minusBtn.addEventListener("click", () => {
+
+            if (quantity > 1) {
+
+                quantity--;
+
+                updateTotal();
+
             }
 
         });
@@ -434,183 +387,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    if (modalClose) {
+    /* ================= ESCAPE ================= */
 
-        modalClose.addEventListener(
-            "click",
-            closeBuyModal
-        );
+    document.addEventListener("keydown", event => {
 
-    }
-
-
-    const modalOverlay =
-        document.querySelector(".buy-modal-overlay");
-
-    if (modalOverlay) {
-
-        modalOverlay.addEventListener(
-            "click",
-            closeBuyModal
-        );
-
-    }
-
-
-    /* =====================================================
-       CHECKOUT
-    ===================================================== */
-
-    if (checkoutForm) {
-
-        checkoutForm.addEventListener(
-            "submit",
-            event => {
-
-                event.preventDefault();
-
-
-                const name =
-                    document
-                        .getElementById("customerName")
-                        .value
-                        .trim();
-
-                const phone =
-                    document
-                        .getElementById("customerPhone")
-                        .value
-                        .trim();
-
-                const address =
-                    document
-                        .getElementById("customerAddress")
-                        .value
-                        .trim();
-
-                const city =
-                    document
-                        .getElementById("customerCity")
-                        .value
-                        .trim();
-
-
-                if (
-                    !name ||
-                    !phone ||
-                    !address ||
-                    !city
-                ) {
-
-                    alert(
-                        "Please complete all delivery details."
-                    );
-
-                    return;
-
-                }
-
-
-                const total =
-                    selectedPrice * quantity;
-
-
-                const orderData = {
-
-                    product:
-                        selectedProduct,
-
-                    quantity:
-                        quantity,
-
-                    total:
-                        total,
-
-                    customer:
-                        name,
-
-                    phone:
-                        phone,
-
-                    address:
-                        address,
-
-                    city:
-                        city
-
-                };
-
-
-                console.log(
-                    "HMH ORDER:",
-                    orderData
-                );
-
-
-                alert(
-                    `Thank you, ${name}!\n\n` +
-                    `Your order for ${quantity} × ${selectedProduct} ` +
-                    `has been received.\n\n` +
-                    `Total: ${formatPrice(total)}`
-                );
-
-
-                checkoutForm.reset();
-
-                closeBuyModal();
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       NEWSLETTER
-    ===================================================== */
-
-    const newsletterForm =
-        document.querySelector(".newsletter-form");
-
-    if (newsletterForm) {
-
-        newsletterForm.addEventListener(
-            "submit",
-            event => {
-
-                event.preventDefault();
-
-                alert(
-                    "Thank you for joining HMH Perfumes."
-                );
-
-                newsletterForm.reset();
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       ESC KEY
-    ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        event => {
+        if (event.key === "Escape") {
 
             if (
-                event.key === "Escape" &&
                 modal &&
-                modal.classList.contains("active")
+                modal.classList.contains("open")
             ) {
+                closePurchaseModal();
+            }
 
-                closeBuyModal();
-
+            if (navMenu) {
+                navMenu.classList.remove("open");
             }
 
         }
-    );
+
+    });
 
 });

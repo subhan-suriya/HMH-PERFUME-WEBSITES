@@ -5,103 +5,91 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>HMH Perfumes | Luxury Fragrances for Men & Women</title>
+    <title>HMH Perfumes | Luxury Fragrance Collection</title>
 
     <meta
         name="description"
-        content="Discover HMH Perfumes — a premium fragrance collection for men, women and unisex scents. Explore signature fragrances and shop your perfect scent."
+        content="Discover HMH Perfumes — a premium fragrance collection created for confidence, elegance and unforgettable moments."
     >
-
-    <meta
-        name="keywords"
-        content="HMH Perfumes, perfumes Pakistan, luxury perfumes, men's perfumes, women's perfumes, unisex perfumes, premium fragrance"
-    >
-
-    <meta name="author" content="HMH Perfumes">
 
     <meta name="theme-color" content="#f8f5ee">
 
-    <meta property="og:title" content="HMH Perfumes | Luxury Fragrances">
-    <meta
-        property="og:description"
-        content="The art of fine fragrance. Discover the HMH Perfumes collection."
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
     >
-    <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+<!-- ================= HEADER ================= -->
 
 <header class="navbar">
 
     <a href="#home" class="logo">
         <img
             src="images/WhatsApp Image 2026-09-05 at 12.46.24 AM.jpeg"
-            alt="HMH Perfumes Logo"
+            alt="HMH Perfumes"
         >
     </a>
 
     <nav class="nav-menu">
-
         <a href="#home">HOME</a>
-        <a href="#perfumes">EXPERIENCE</a>
-        <a href="#products">COLLECTION</a>
+        <a href="#perfumes">PERFUMES</a>
+        <a href="#collection">COLLECTION</a>
         <a href="#about">ABOUT</a>
         <a href="#contact">CONTACT</a>
-
     </nav>
 
     <div class="header-right">
+        <a href="#collection" class="header-order">SHOP NOW</a>
 
-        <a href="#products" class="header-order">
-            SHOP NOW
-        </a>
-
-        <button
-            class="menu-btn"
-            aria-label="Open navigation menu"
-            type="button"
-        >
+        <button class="menu-btn" aria-label="Open Menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
-
     </div>
 
 </header>
 
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
-    <div class="hero-background"></div>
+    <div class="hero-image-wrap">
+
+        <!-- Replace hero-perfume.jpg with your actual hero image filename -->
+        <img
+            src="images/hero-perfume.jpg"
+            alt="HMH Perfumes Luxury Collection"
+            class="hero-image"
+        >
+
+    </div>
 
     <div class="hero-content">
 
-        <p class="hero-kicker">
-            HMH PERFUMES
-        </p>
+        <span class="hero-small">THE HOUSE OF HMH</span>
 
         <h1>
             THE ART OF
             <span>FINE FRAGRANCE</span>
         </h1>
 
-        <p class="hero-description">
-            Discover a refined collection of fragrances created
-            to become part of your signature.
+        <p>
+            Discover a world of refined fragrances,
+            crafted for those who leave an impression.
         </p>
 
-        <a href="#products" class="hero-btn">
+        <a href="#perfumes" class="hero-btn">
             EXPLORE COLLECTION
             <span>→</span>
         </a>
@@ -111,82 +99,35 @@
 </section>
 
 
-<!-- =========================================================
-     CATEGORY INTRO
-========================================================= -->
+<!-- ================= INTRO ================= -->
 
-<section class="category-section">
+<section class="intro-section">
 
-    <div class="section-heading">
+    <div class="intro-inner">
 
-        <p class="eyebrow">
-            DISCOVER YOUR SCENT
-        </p>
+        <span class="section-eyebrow">
+            HMH PERFUMES
+        </span>
 
         <h2>
-            FIND YOUR
-            <span>SIGNATURE</span>
+            FRAGRANCE IS
+            <em>MEMORY</em>
         </h2>
 
+        <div class="intro-line"></div>
+
         <p>
-            Explore fragrances designed for every personality,
-            mood and moment.
+            Every HMH fragrance is designed to become
+            part of your story — sophisticated,
+            memorable and unmistakably yours.
         </p>
-
-    </div>
-
-
-    <div class="category-grid">
-
-        <a href="#products" class="category-card">
-
-            <div class="category-number">01</div>
-
-            <div>
-                <p>FOR HIM</p>
-                <h3>MEN</h3>
-            </div>
-
-            <span class="category-arrow">↗</span>
-
-        </a>
-
-
-        <a href="#products" class="category-card">
-
-            <div class="category-number">02</div>
-
-            <div>
-                <p>FOR HER</p>
-                <h3>WOMEN</h3>
-            </div>
-
-            <span class="category-arrow">↗</span>
-
-        </a>
-
-
-        <a href="#products" class="category-card">
-
-            <div class="category-number">03</div>
-
-            <div>
-                <p>FOR EVERYONE</p>
-                <h3>UNISEX</h3>
-            </div>
-
-            <span class="category-arrow">↗</span>
-
-        </a>
 
     </div>
 
 </section>
 
 
-<!-- =========================================================
-     PERFUME SCROLL EXPERIENCE
-========================================================= -->
+<!-- ================= SCROLLING PERFUME SHOWCASE ================= -->
 
 <section class="perfume-showcase" id="perfumes">
 
@@ -195,20 +136,16 @@
         <div class="perfume-info">
 
             <div class="perfume-counter">
-
                 <span id="currentNumber">01</span>
-
                 <i></i>
-
                 <span>04</span>
-
             </div>
 
             <div class="gold-line"></div>
 
-            <p class="perfume-label">
+            <span class="perfume-label">
                 HMH SIGNATURE COLLECTION
-            </p>
+            </span>
 
             <h2 id="perfumeTitle">
                 9PM AFNAN
@@ -216,12 +153,18 @@
 
             <p id="perfumeDescription">
                 A rich and captivating fragrance created
-                for confidence, elegance and unforgettable evenings.
+                for confidence, elegance and unforgettable
+                evenings.
             </p>
 
             <div class="perfume-meta" id="perfumeMeta">
                 LONG LASTING · PREMIUM FRAGRANCE
             </div>
+
+            <a href="#collection" class="showcase-btn">
+                DISCOVER FRAGRANCE
+                <span>→</span>
+            </a>
 
         </div>
 
@@ -230,10 +173,12 @@
 
             <div class="bottle-glow"></div>
 
+            <div class="bottle-circle"></div>
+
             <img
                 id="perfumeBottle"
                 src="images/eb234a7c-7804-4485-a522-682d16050d8d.png"
-                alt="9PM Afnan perfume"
+                alt="9PM Afnan"
             >
 
         </div>
@@ -254,30 +199,22 @@
 </section>
 
 
-<!-- =========================================================
-     PRODUCTS
-========================================================= -->
+<!-- ================= COLLECTION ================= -->
 
-<section class="products" id="products">
+<section class="collection" id="collection">
 
-    <div class="products-heading">
+    <div class="collection-heading">
 
-        <div>
+        <span>THE COLLECTION</span>
 
-            <p class="eyebrow">
-                THE COLLECTION
-            </p>
+        <h2>
+            FIND YOUR
+            <em>SIGNATURE SCENT</em>
+        </h2>
 
-            <h2>
-                SHOP BY
-                <span>FRAGRANCE</span>
-            </h2>
-
-        </div>
-
-        <p class="collection-intro">
-            Four signature fragrances. Discover the scent
-            that feels like you.
+        <p>
+            Curated fragrances for every mood,
+            personality and occasion.
         </p>
 
     </div>
@@ -287,71 +224,62 @@
 
     <div class="category-filter">
 
-        <button class="filter-btn active" data-category="all">
+        <button class="category-btn active" data-filter="all">
             ALL
         </button>
 
-        <button class="filter-btn" data-category="men">
+        <button class="category-btn" data-filter="men">
             MEN
         </button>
 
-        <button class="filter-btn" data-category="women">
+        <button class="category-btn" data-filter="women">
             WOMEN
         </button>
 
-        <button class="filter-btn" data-category="unisex">
+        <button class="category-btn" data-filter="unisex">
             UNISEX
         </button>
 
     </div>
 
 
+    <!-- PRODUCTS -->
+
     <div class="products-grid">
 
 
-        <!-- PRODUCT 01 -->
+        <!-- PRODUCT 1 -->
 
         <article
             class="product-card"
             data-category="men"
+            data-name="9PM Afnan"
+            data-price="4999"
+            data-image="images/eb234a7c-7804-4485-a522-682d16050d8d.png"
         >
 
             <div class="product-image">
 
-                <span class="product-category">
-                    MEN
+                <span class="product-tag">
+                    SIGNATURE
                 </span>
 
                 <img
                     src="images/eb234a7c-7804-4485-a522-682d16050d8d.png"
-                    alt="9PM Afnan perfume"
+                    alt="9PM Afnan Perfume"
+                    loading="lazy"
                 >
-
-                <button
-                    class="quick-buy"
-                    type="button"
-                    data-product="9PM AFNAN"
-                    data-price="4999"
-                >
-                    QUICK BUY
-                </button>
 
             </div>
 
-
             <div class="product-info">
 
-                <p class="product-type">
-                    SIGNATURE FRAGRANCE
-                </p>
+                <span>MEN</span>
 
-                <h3>
-                    9PM AFNAN
-                </h3>
+                <h3>9PM AFNAN</h3>
 
-                <p class="product-description">
-                    Rich, warm and captivating with a refined
-                    evening character.
+                <p>
+                    Rich · Warm · Captivating
                 </p>
 
                 <div class="product-bottom">
@@ -360,14 +288,8 @@
                         PKR 4,999
                     </strong>
 
-                    <button
-                        class="order-btn"
-                        type="button"
-                        data-product="9PM AFNAN"
-                        data-price="4999"
-                    >
+                    <button class="buy-btn">
                         BUY NOW
-                        <span>→</span>
                     </button>
 
                 </div>
@@ -377,49 +299,38 @@
         </article>
 
 
-        <!-- PRODUCT 02 -->
+        <!-- PRODUCT 2 -->
 
         <article
             class="product-card"
             data-category="unisex"
+            data-name="Imagination"
+            data-price="4999"
+            data-image="images/53cffe72-a68c-437d-a3b4-0e9c0e7a6394.png"
         >
 
             <div class="product-image">
 
-                <span class="product-category">
-                    UNISEX
+                <span class="product-tag">
+                    COLLECTION
                 </span>
 
                 <img
                     src="images/53cffe72-a68c-437d-a3b4-0e9c0e7a6394.png"
-                    alt="Imagination perfume"
+                    alt="Imagination Perfume"
+                    loading="lazy"
                 >
-
-                <button
-                    class="quick-buy"
-                    type="button"
-                    data-product="IMAGINATION"
-                    data-price="4999"
-                >
-                    QUICK BUY
-                </button>
 
             </div>
 
-
             <div class="product-info">
 
-                <p class="product-type">
-                    SIGNATURE FRAGRANCE
-                </p>
+                <span>UNISEX</span>
 
-                <h3>
-                    IMAGINATION
-                </h3>
+                <h3>IMAGINATION</h3>
 
-                <p class="product-description">
-                    A modern fragrance with an elegant,
-                    effortless character.
+                <p>
+                    Fresh · Modern · Elegant
                 </p>
 
                 <div class="product-bottom">
@@ -428,14 +339,8 @@
                         PKR 4,999
                     </strong>
 
-                    <button
-                        class="order-btn"
-                        type="button"
-                        data-product="IMAGINATION"
-                        data-price="4999"
-                    >
+                    <button class="buy-btn">
                         BUY NOW
-                        <span>→</span>
                     </button>
 
                 </div>
@@ -445,117 +350,38 @@
         </article>
 
 
-        <!-- PRODUCT 03 -->
-
-        <article
-            class="product-card"
-            data-category="unisex"
-        >
-
-            <div class="product-image">
-
-                <span class="product-category">
-                    UNISEX
-                </span>
-
-                <img
-                    src="images/d34f3a82-3964-4421-888d-22a8f9772a6f.png"
-                    alt="Tuscan Leather perfume"
-                >
-
-                <button
-                    class="quick-buy"
-                    type="button"
-                    data-product="TUSCAN LEATHER"
-                    data-price="4999"
-                >
-                    QUICK BUY
-                </button>
-
-            </div>
-
-
-            <div class="product-info">
-
-                <p class="product-type">
-                    SIGNATURE FRAGRANCE
-                </p>
-
-                <h3>
-                    TUSCAN LEATHER
-                </h3>
-
-                <p class="product-description">
-                    Deep, sophisticated and distinctive,
-                    designed to leave an impression.
-                </p>
-
-                <div class="product-bottom">
-
-                    <strong>
-                        PKR 4,999
-                    </strong>
-
-                    <button
-                        class="order-btn"
-                        type="button"
-                        data-product="TUSCAN LEATHER"
-                        data-price="4999"
-                    >
-                        BUY NOW
-                        <span>→</span>
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 04 -->
+        <!-- PRODUCT 3 -->
 
         <article
             class="product-card"
             data-category="men"
+            data-name="Tuscan Leather"
+            data-price="4999"
+            data-image="images/d34f3a82-3964-4421-888d-22a8f9772a6f.png"
         >
 
             <div class="product-image">
 
-                <span class="product-category">
-                    MEN
+                <span class="product-tag">
+                    PREMIUM
                 </span>
 
                 <img
-                    src="images/1832019a-c9d7-4a5f-a415-eadae083928e.png"
-                    alt="David Beckham perfume"
+                    src="images/d34f3a82-3964-4421-888d-22a8f9772a6f.png"
+                    alt="Tuscan Leather Perfume"
+                    loading="lazy"
                 >
-
-                <button
-                    class="quick-buy"
-                    type="button"
-                    data-product="DAVID BECKHAM"
-                    data-price="4999"
-                >
-                    QUICK BUY
-                </button>
 
             </div>
 
-
             <div class="product-info">
 
-                <p class="product-type">
-                    SIGNATURE FRAGRANCE
-                </p>
+                <span>MEN</span>
 
-                <h3>
-                    DAVID BECKHAM
-                </h3>
+                <h3>TUSCAN LEATHER</h3>
 
-                <p class="product-description">
-                    Clean, sophisticated and timeless for
-                    everyday confidence.
+                <p>
+                    Bold · Deep · Sophisticated
                 </p>
 
                 <div class="product-bottom">
@@ -564,14 +390,59 @@
                         PKR 4,999
                     </strong>
 
-                    <button
-                        class="order-btn"
-                        type="button"
-                        data-product="DAVID BECKHAM"
-                        data-price="4999"
-                    >
+                    <button class="buy-btn">
                         BUY NOW
-                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 4 -->
+
+        <article
+            class="product-card"
+            data-category="men"
+            data-name="David Beckham"
+            data-price="4999"
+            data-image="images/1832019a-c9d7-4a5f-a415-eadae083928e.png"
+        >
+
+            <div class="product-image">
+
+                <span class="product-tag">
+                    CLASSIC
+                </span>
+
+                <img
+                    src="images/1832019a-c9d7-4a5f-a415-eadae083928e.png"
+                    alt="David Beckham Perfume"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span>MEN</span>
+
+                <h3>DAVID BECKHAM</h3>
+
+                <p>
+                    Clean · Refined · Timeless
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        PKR 4,999
+                    </strong>
+
+                    <button class="buy-btn">
+                        BUY NOW
                     </button>
 
                 </div>
@@ -585,31 +456,52 @@
 </section>
 
 
-<!-- =========================================================
-     ABOUT / BRAND
-========================================================= -->
+<!-- ================= ABOUT ================= -->
 
-<section class="about" id="about">
+<section class="about-section" id="about">
 
     <div class="about-content">
 
-        <p class="eyebrow">
-            THE HOUSE OF HMH
-        </p>
+        <span>THE HMH PHILOSOPHY</span>
 
         <h2>
-            FRAGRANCE IS MORE
-            <span>THAN A SCENT.</span>
+            CREATED TO BE
+            <em>REMEMBERED.</em>
         </h2>
 
         <p>
-            At HMH Perfumes, we believe fragrance is a part
-            of your identity. Every bottle represents a mood,
-            a memory and a signature that stays with you.
+            HMH Perfumes represents a modern approach
+            to luxury fragrance. Every scent is selected
+            for its character, presence and ability to
+            become part of your identity.
         </p>
 
-        <a href="#products" class="text-link">
-            DISCOVER THE COLLECTION →
+        <div class="about-signature">
+            HMH
+            <small>PERFUMES</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="final-cta">
+
+    <div>
+
+        <span>YOUR SIGNATURE AWAITS</span>
+
+        <h2>
+            WEAR YOUR
+            <em>STORY.</em>
+        </h2>
+
+        <a href="#collection">
+            SHOP THE COLLECTION
+            <span>→</span>
         </a>
 
     </div>
@@ -617,235 +509,56 @@
 </section>
 
 
-<!-- =========================================================
-     WHY HMH
-========================================================= -->
+<!-- ================= FOOTER ================= -->
 
-<section class="why-hmh">
+<footer id="contact">
 
-    <div class="section-heading">
-
-        <p class="eyebrow">
-            THE HMH STANDARD
-        </p>
-
-        <h2>
-            WHY CHOOSE
-            <span>HMH?</span>
-        </h2>
-
-    </div>
-
-
-    <div class="features-grid">
-
-        <div class="feature">
-
-            <span>01</span>
-
-            <h3>
-                PREMIUM FRAGRANCES
-            </h3>
-
-            <p>
-                Carefully selected fragrances made for
-                memorable impressions.
-            </p>
-
-        </div>
-
-
-        <div class="feature">
-
-            <span>02</span>
-
-            <h3>
-                LONG LASTING
-            </h3>
-
-            <p>
-                Scents designed to stay with you throughout
-                your day and special moments.
-            </p>
-
-        </div>
-
-
-        <div class="feature">
-
-            <span>03</span>
-
-            <h3>
-                ELEGANT PACKAGING
-            </h3>
-
-            <p>
-                A refined presentation that makes every
-                fragrance feel special.
-            </p>
-
-        </div>
-
-
-        <div class="feature">
-
-            <span>04</span>
-
-            <h3>
-                SIGNATURE STYLE
-            </h3>
-
-            <p>
-                Find a fragrance that matches your personality
-                and becomes uniquely yours.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     NEWSLETTER
-========================================================= -->
-
-<section class="newsletter">
-
-    <p class="eyebrow">
-        STAY IN THE WORLD OF HMH
-    </p>
-
-    <h2>
-        DISCOVER YOUR
-        <span>NEXT SIGNATURE</span>
-    </h2>
-
-    <p>
-        Be the first to discover new fragrances and
-        exclusive HMH collections.
-    </p>
-
-    <form class="newsletter-form">
-
-        <input
-            type="email"
-            placeholder="Your email address"
-            aria-label="Email address"
-            required
-        >
-
-        <button type="submit">
-            JOIN
-        </button>
-
-    </form>
-
-</section>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer class="footer" id="contact">
-
-    <div class="footer-main">
-
+    <div class="footer-top">
 
         <div class="footer-brand">
 
             <div class="footer-logo">
-                HMH PERFUMES
+                HMH
             </div>
-
-            <p class="footer-tagline">
-                THE ART OF FINE FRAGRANCE
-            </p>
-
-            <p class="footer-description">
-                Discover refined fragrances created for those
-                who believe every scent should leave a lasting
-                impression.
-            </p>
-
-        </div>
-
-
-        <div class="footer-column">
-
-            <h3>EXPLORE</h3>
-
-            <a href="#home">Home</a>
-            <a href="#perfumes">Experience</a>
-            <a href="#products">Collection</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-
-        </div>
-
-
-        <div class="footer-column">
-
-            <h3>COLLECTION</h3>
-
-            <a href="#products">9PM Afnan</a>
-            <a href="#products">Imagination</a>
-            <a href="#products">Tuscan Leather</a>
-            <a href="#products">David Beckham</a>
-
-        </div>
-
-
-        <div class="footer-column footer-contact">
-
-            <h3>CONTACT</h3>
 
             <p>
-                Karachi, Pakistan
+                HOUSE OF LUXURY FRAGRANCES
             </p>
 
-            <a href="tel:+923342563613">
-                +92 334 2563613
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#home">HOME</a>
+            <a href="#perfumes">PERFUMES</a>
+            <a href="#collection">COLLECTION</a>
+            <a href="#about">ABOUT</a>
+
+        </div>
+
+
+        <div class="footer-contact">
+
+            <span>CONTACT</span>
+
+            <a href="mailto:hello@hmhperfumes.com">
+                hello@hmhperfumes.com
             </a>
-
-            <a href="mailto:info@hmhperfumes.com">
-                info@hmhperfumes.com
-            </a>
-
-            <div class="footer-socials">
-
-                <a href="#" aria-label="Instagram">
-                    IG
-                </a>
-
-                <a href="#" aria-label="Facebook">
-                    FB
-                </a>
-
-                <a href="#" aria-label="TikTok">
-                    TK
-                </a>
-
-            </div>
 
         </div>
 
     </div>
-
-
-    <div class="footer-line"></div>
 
 
     <div class="footer-bottom">
 
         <span>
-            © 2026 HMH PERFUMES. ALL RIGHTS RESERVED.
+            © 2026 HMH Perfumes. All rights reserved.
         </span>
 
         <span>
-            HOUSE OF LUXURY FRAGRANCES
+            LUXURY · CHARACTER · PRESENCE
         </span>
 
     </div>
@@ -853,35 +566,35 @@
 </footer>
 
 
-<!-- =========================================================
-     BUY NOW MODAL
-========================================================= -->
+<!-- ================= PURCHASE MODAL ================= -->
 
-<div class="buy-modal" id="buyModal">
+<div class="purchase-modal" id="purchaseModal">
 
-    <div class="buy-modal-overlay"></div>
+    <div class="purchase-box">
 
-    <div class="buy-modal-box">
-
-        <button
-            class="modal-close"
-            id="modalClose"
-            type="button"
-            aria-label="Close"
-        >
+        <button class="close-modal" id="closeModal">
             ×
         </button>
 
+        <div class="purchase-product">
 
-        <div class="modal-header">
+            <img id="modalProductImage" src="" alt="">
 
-            <p class="eyebrow">
-                YOUR SELECTION
-            </p>
+            <div>
 
-            <h2 id="modalProduct">
-                9PM AFNAN
-            </h2>
+                <span id="modalCategory">
+                    HMH PERFUMES
+                </span>
+
+                <h2 id="modalProductName">
+                    Product
+                </h2>
+
+                <strong id="modalProductPrice">
+                    PKR 4,999
+                </strong>
+
+            </div>
 
         </div>
 
@@ -892,21 +605,15 @@
 
             <div class="quantity-controls">
 
-                <button
-                    type="button"
-                    id="minusBtn"
-                >
+                <button id="minusBtn">
                     −
                 </button>
 
-                <strong id="quantityValue">
+                <strong id="quantity">
                     1
                 </strong>
 
-                <button
-                    type="button"
-                    id="plusBtn"
-                >
+                <button id="plusBtn">
                     +
                 </button>
 
@@ -915,79 +622,28 @@
         </div>
 
 
-        <div class="order-summary">
+        <div class="purchase-total">
 
-            <div>
-                <span>PRICE</span>
-                <strong id="modalPrice">
-                    PKR 4,999
-                </strong>
-            </div>
+            <span>TOTAL</span>
 
-            <div>
-                <span>QUANTITY</span>
-                <strong id="summaryQuantity">
-                    1
-                </strong>
-            </div>
-
-            <div class="total-row">
-                <span>TOTAL</span>
-                <strong id="modalTotal">
-                    PKR 4,999
-                </strong>
-            </div>
+            <strong id="totalPrice">
+                PKR 4,999
+            </strong>
 
         </div>
 
 
-        <form class="checkout-form" id="checkoutForm">
-
-            <input
-                type="text"
-                id="customerName"
-                placeholder="Full Name"
-                required
-            >
-
-            <input
-                type="tel"
-                id="customerPhone"
-                placeholder="Phone Number"
-                required
-            >
-
-            <textarea
-                id="customerAddress"
-                placeholder="Complete Delivery Address"
-                required
-            ></textarea>
-
-            <input
-                type="text"
-                id="customerCity"
-                placeholder="City"
-                required
-            >
-
-            <button
-                class="place-order-btn"
-                type="submit"
-            >
-                PLACE ORDER
-                <span>→</span>
-            </button>
-
-        </form>
+        <button class="confirm-order">
+            CONTINUE TO ORDER
+            <span>→</span>
+        </button>
 
     </div>
 
 </div>
 
 
-<!-- =========================================================
-     SCRIPTS
-========================================================= -->
+<!-- ================= SCRIPTS ================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
