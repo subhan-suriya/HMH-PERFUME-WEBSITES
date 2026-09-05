@@ -409,3 +409,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+/* ================= WHATSAPP ORDER ================= */
+
+const confirmOrder = document.querySelector(".confirm-order");
+
+if (confirmOrder) {
+
+    confirmOrder.addEventListener("click", () => {
+
+        const productName = modalName.textContent.trim();
+
+        const total = totalPrice.textContent.trim();
+
+        const message =
+            `Hello HMH Perfumes!%0A%0A` +
+            `I would like to order:%0A%0A` +
+            `Product: ${encodeURIComponent(productName)}%0A` +
+            `Quantity: ${quantity}%0A` +
+            `Total: ${encodeURIComponent(total)}%0A%0A` +
+            `Please confirm my order.`;
+
+        const whatsappURL =
+            `https://wa.me/923242763303?text=${message}`;
+
+        window.open(whatsappURL, "_blank");
+
+    });
+
+}
