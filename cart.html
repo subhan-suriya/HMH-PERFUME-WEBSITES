@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Cart | HMH Perfumes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+            <span class="brand-main">HMH</span>
+            <span class="brand-sub">PERFUMES</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="categories.html">Collections</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <a href="cart.html" class="cart-link active">
+            Cart <span class="cart-count">0</span>
+        </a>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+    <div class="ornament top-ornament">✦</div>
+
+    <p class="eyebrow">HMH PERFUMES</p>
+
+    <h1>Your <span>Cart</span></h1>
+
+    <div class="gold-line"></div>
+
+    <p class="hero-description">
+        Review your selected fragrances before placing your order.
+    </p>
+
+    <div class="ornament bottom-ornament">✦</div>
+
+</section>
+
+
+<!-- CART -->
+
+<section class="cart-section">
+
+    <div class="section-heading">
+        <p>YOUR SELECTION</p>
+        <h2>Shopping Cart</h2>
+    </div>
+
+
+    <!-- EMPTY CART -->
+
+    <div id="emptyCart" class="empty-cart">
+
+        <div class="empty-icon">✦</div>
+
+        <p class="empty-label">HMH PERFUMES</p>
+
+        <h3>Your cart is empty</h3>
+
+        <div class="empty-line"></div>
+
+        <p>
+            You haven't added any fragrances to your cart yet.
+        </p>
+
+        <a href="shop.html" class="gold-button">
+            Explore Fragrances
+        </a>
+
+    </div>
+
+
+    <!-- CART CONTENT -->
+
+    <div id="cartContent" class="cart-content">
+
+        <div id="cartItems" class="cart-items"></div>
+
+
+        <!-- SUMMARY -->
+
+        <div class="cart-summary">
+
+            <div class="summary-heading">
+                <p>ORDER SUMMARY</p>
+                <h3>Your Selection</h3>
+            </div>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="cartSubtotal">PKR 0</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Delivery</span>
+                <span>Calculated on WhatsApp</span>
+            </div>
+
+            <div class="summary-line"></div>
+
+            <div class="summary-total">
+                <span>Total</span>
+                <strong id="cartTotal">PKR 0</strong>
+            </div>
+
+            <button
+                type="button"
+                class="checkout-button"
+                onclick="checkoutWhatsApp()"
+            >
+                Order on WhatsApp
+            </button>
+
+            <button
+                type="button"
+                class="clear-button"
+                onclick="clearCart()"
+            >
+                Clear Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LUXURY CTA -->
+
+<section class="luxury-cta">
+
+    <div class="cta-ornament">✦</div>
+
+    <p>THE HMH EXPERIENCE</p>
+
+    <h2>
+        Find the fragrance that becomes
+        <span>your signature.</span>
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <p class="cta-text">
+        Every scent tells a story. Make yours unforgettable.
+    </p>
+
+    <a href="categories.html" class="gold-button">
+        Explore Collections
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="footer-brand">
+
+        <div class="brand-main">HMH</div>
+
+        <div class="brand-sub">PERFUMES</div>
+
+        <p>The Home Town of Fragrance</p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="categories.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>© 2026 HMH Perfumes</span>
+
+        <span>Crafted with elegance</span>
+
+    </div>
+
+</footer>
+
+
+<script src="cart.js"></script>
+
+</body>
+</html>

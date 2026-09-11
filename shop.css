@@ -1,0 +1,831 @@
+
+/* =========================================
+   HMH PERFUMES
+   SHOP PAGE
+   MASTER LUXURY THEME
+========================================= */
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: #faf8f2;
+    color: #222;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+    width: 100%;
+    background: rgba(250, 248, 242, 0.97);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.header-inner {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.brand {
+    text-decoration: none;
+    color: #222;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    line-height: 1;
+}
+
+
+.brand-main {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 7px;
+}
+
+
+.brand-sub {
+    font-family: "Montserrat", sans-serif;
+    font-size: 8px;
+    letter-spacing: 5px;
+    margin-top: 6px;
+    color: #b99735;
+}
+
+
+/* NAVIGATION */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #b99735;
+}
+
+
+/* CART */
+
+.cart-link {
+    text-decoration: none;
+
+    color: #333;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    border: 1px solid #c9a63a;
+
+    padding: 11px 17px;
+
+    transition: 0.3s ease;
+}
+
+
+.cart-link:hover {
+    background: #c9a63a;
+    color: white;
+}
+
+
+.cart-count {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 20px;
+    height: 20px;
+
+    margin-left: 7px;
+
+    border-radius: 50%;
+
+    background: #c9a63a;
+    color: white;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   PAGE HERO
+========================================= */
+
+.page-hero {
+    min-height: 560px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212, 175, 55, 0.06),
+            transparent 55%
+        );
+
+    position: relative;
+}
+
+
+.eyebrow {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    color: #b99735;
+
+    margin-bottom: 22px;
+}
+
+
+.page-hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 92px);
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    color: #222;
+}
+
+
+.page-hero h1 span {
+    display: block;
+
+    color: #b99735;
+
+    font-style: italic;
+}
+
+
+.gold-line {
+    width: 80px;
+    height: 1px;
+
+    background: #c9a63a;
+
+    margin: 30px auto;
+}
+
+
+.hero-description {
+    max-width: 580px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+    font-weight: 300;
+
+    line-height: 2;
+
+    color: #777;
+
+    letter-spacing: 0.5px;
+}
+
+
+.ornament {
+    color: #c9a63a;
+    font-size: 20px;
+}
+
+
+.top-ornament {
+    margin-bottom: 25px;
+}
+
+
+.bottom-ornament {
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   SHOP SECTION
+========================================= */
+
+.shop-section {
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 100px 45px;
+}
+
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+
+.section-heading p {
+    font-family: "Montserrat", sans-serif;
+
+    color: #b99735;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+
+.section-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 52px;
+    font-weight: 500;
+
+    color: #222;
+}
+
+
+/* =========================================
+   PRODUCT GRID
+========================================= */
+
+.products-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+
+/* =========================================
+   EMPTY SHOP
+========================================= */
+
+.empty-shop {
+    grid-column: 1 / -1;
+
+    max-width: 700px;
+
+    margin: 20px auto 0;
+
+    text-align: center;
+
+    padding: 90px 40px;
+
+    border: 1px solid rgba(201, 166, 58, 0.35);
+
+    background: #fffdf8;
+}
+
+
+.empty-icon {
+    font-size: 25px;
+
+    color: #c9a63a;
+
+    margin-bottom: 25px;
+}
+
+
+.empty-label {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #b99735;
+
+    margin-bottom: 15px;
+}
+
+
+.empty-shop h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 40px;
+
+    font-weight: 500;
+
+    color: #222;
+}
+
+
+.empty-line {
+    width: 50px;
+    height: 1px;
+
+    background: #c9a63a;
+
+    margin: 25px auto;
+}
+
+
+.empty-description {
+    max-width: 480px;
+
+    margin: auto;
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 2;
+}
+
+
+/* =========================================
+   FUTURE PRODUCT CARD
+========================================= */
+
+.product-card {
+    background: #fffdf8;
+
+    border: 1px solid rgba(201, 166, 58, 0.25);
+
+    overflow: hidden;
+
+    transition: 0.4s ease;
+}
+
+
+.product-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.07);
+}
+
+
+.product-image {
+    height: 420px;
+
+    background: #f1eee7;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.product-info {
+    padding: 28px;
+}
+
+
+.product-type {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #b99735;
+}
+
+
+.product-info h3,
+.product-info h4 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    margin: 10px 0;
+}
+
+
+.product-info p {
+    font-size: 11px;
+
+    color: #777;
+
+    line-height: 1.8;
+}
+
+
+.product-bottom {
+    margin-top: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.product-bottom strong {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+}
+
+
+.add-cart {
+    background: transparent;
+
+    border: 1px solid #c9a63a;
+
+    padding: 10px 15px;
+
+    color: #333;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.add-cart:hover {
+    background: #c9a63a;
+
+    color: white;
+}
+
+
+/* =========================================
+   LUXURY CTA
+========================================= */
+
+.luxury-cta {
+    text-align: center;
+
+    padding: 110px 25px;
+
+    background: #f1eee6;
+
+    border-top: 1px solid rgba(201, 166, 58, 0.2);
+    border-bottom: 1px solid rgba(201, 166, 58, 0.2);
+}
+
+
+.cta-ornament {
+    color: #c9a63a;
+
+    font-size: 22px;
+
+    margin-bottom: 25px;
+}
+
+
+.luxury-cta > p:first-of-type {
+    color: #b99735;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+
+.luxury-cta h2 {
+    max-width: 700px;
+
+    margin: 20px auto;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+
+.luxury-cta h2 span {
+    color: #b99735;
+
+    font-style: italic;
+}
+
+
+.cta-text {
+    color: #777;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 30px;
+}
+
+
+.gold-button {
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #c9a63a;
+
+    color: white;
+
+    padding: 14px 27px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+
+.gold-button:hover {
+    background: #a88728;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    background: #222;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 65px 30px 25px;
+}
+
+
+.footer-brand .brand-main {
+    color: white;
+}
+
+
+.footer-brand .brand-sub {
+    color: #c9a63a;
+}
+
+
+.footer-brand p {
+    margin-top: 15px;
+
+    font-size: 10px;
+
+    color: #aaa;
+
+    letter-spacing: 1px;
+}
+
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 28px;
+
+    margin: 40px 0;
+}
+
+
+.footer-links a {
+    color: #ccc;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+
+.footer-links a:hover {
+    color: #c9a63a;
+}
+
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    padding-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .header-inner {
+        padding: 18px 25px;
+    }
+
+    .main-nav {
+        gap: 18px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .header-inner {
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding: 18px 15px;
+    }
+
+
+    .main-nav {
+        gap: 14px;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .main-nav a {
+        font-size: 9px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .cart-link {
+        font-size: 9px;
+
+        padding: 9px 14px;
+    }
+
+
+    .page-hero {
+        min-height: 500px;
+
+        padding: 70px 20px;
+    }
+
+
+    .page-hero h1 {
+        font-size: 55px;
+    }
+
+
+    .hero-description {
+        font-size: 11px;
+    }
+
+
+    .shop-section {
+        padding: 75px 20px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 43px;
+    }
+
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .empty-shop {
+        padding: 65px 25px;
+    }
+
+
+    .empty-shop h3 {
+        font-size: 34px;
+    }
+
+
+    .product-image {
+        height: 380px;
+    }
+
+
+    .luxury-cta {
+        padding: 80px 20px;
+    }
+
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+}

@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | HMH Perfumes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a href="index.html" class="brand">
+                <span class="brand-main">HMH</span>
+                <span class="brand-sub">PERFUMES</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="categories.html">Collections</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+
+            <a href="cart.html" class="cart-link">
+                Cart <span class="cart-count">0</span>
+            </a>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="page-hero">
+
+            <div class="ornament top-ornament">✦</div>
+
+            <p class="eyebrow">CONTACT HMH</p>
+
+            <h1>
+                Let’s Talk
+                <span>Fragrance</span>
+            </h1>
+
+            <div class="gold-line"></div>
+
+            <p class="hero-description">
+                Reach out for product inquiries, collection guidance or a private fragrance recommendation from HMH Perfumes.
+            </p>
+
+            <div class="ornament bottom-ornament">✦</div>
+
+        </section>
+
+        <section class="contact-section">
+
+            <div class="section-heading">
+                <p>CONTACT INFO</p>
+                <h2>We’re here to help</h2>
+            </div>
+
+            <div class="info-grid">
+
+                <article class="contact-card">
+                    <span class="card-icon">✦</span>
+                    <h3>WhatsApp / Phone</h3>
+                    <a href="https://wa.me/923242763303" target="_blank" rel="noopener noreferrer">+92 324 2763303</a>
+                </article>
+
+                <article class="contact-card">
+                    <span class="card-icon">✦</span>
+                    <h3>Email</h3>
+                    <a href="mailto:hmhperfumes@gmail.com">hmhperfumes@gmail.com</a>
+                </article>
+
+                <article class="contact-card">
+                    <span class="card-icon">✦</span>
+                    <h3>Business</h3>
+                    <p>Online perfume business</p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="form-section">
+
+            <div class="form-shell">
+
+                <div class="form-intro">
+                    <p class="eyebrow">MESSAGE US</p>
+                    <h2>Send your inquiry</h2>
+                    <p>
+                        Fill out the form below and we’ll prepare your message for WhatsApp so you can continue the conversation with HMH Perfumes.
+                    </p>
+                </div>
+
+                <form id="contactForm" novalidate>
+
+                    <div class="field-row two-column">
+                        <div class="field-group">
+                            <label for="fullName">Full Name</label>
+                            <input id="fullName" name="fullName" type="text" placeholder="Your full name">
+                            <small class="error-text" data-error-for="fullName"></small>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" placeholder="your@email.com">
+                            <small class="error-text" data-error-for="email"></small>
+                        </div>
+                    </div>
+
+                    <div class="field-row two-column">
+                        <div class="field-group">
+                            <label for="phone">Phone / WhatsApp Number</label>
+                            <input id="phone" name="phone" type="tel" placeholder="03xx xxx xxxx">
+                            <small class="error-text" data-error-for="phone"></small>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="subject">Subject</label>
+                            <input id="subject" name="subject" type="text" placeholder="How can we help?">
+                            <small class="error-text" data-error-for="subject"></small>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Write your message here..."></textarea>
+                        <small class="error-text" data-error-for="message"></small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="gold-btn">Send on WhatsApp</button>
+                        <p class="form-note">This form prepares a WhatsApp message with your details. No backend is required for this static website.</p>
+                    </div>
+
+                    <div id="formSuccess" class="success-message" aria-live="polite">
+                        Your message is being prepared for WhatsApp.
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-brand">
+            <div class="brand-main">HMH</div>
+            <div class="brand-sub">PERFUMES</div>
+            <p>The Home Town of Fragrance</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="categories.html">Collections</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 HMH Perfumes</span>
+            <span>Crafted with elegance</span>
+        </div>
+
+    </footer>
+
+    <script src="contact.js"></script>
+</body>
+</html>
