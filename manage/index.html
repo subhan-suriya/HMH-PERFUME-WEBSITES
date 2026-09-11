@@ -18,7 +18,32 @@
 </head>
 <body>
 
-    <div class="admin-shell">
+    <div id="adminLoginScreen" class="admin-login-screen">
+        <div class="admin-login-card">
+            <p class="eyebrow">Prototype Access</p>
+            <h1>HMH Admin Login</h1>
+            <p class="login-note">
+                This is a frontend-only prototype login flow. Enter any Admin ID and Password to continue.
+            </p>
+
+            <form id="adminLoginForm" class="admin-login-form">
+                <div class="field">
+                    <label for="adminId">Admin ID</label>
+                    <input id="adminId" name="adminId" type="text" placeholder="Enter admin ID">
+                </div>
+
+                <div class="field">
+                    <label for="adminPassword">Password</label>
+                    <input id="adminPassword" name="adminPassword" type="password" placeholder="Enter password">
+                </div>
+
+                <button type="submit" class="primary-btn full-width">Enter Dashboard</button>
+                <p id="adminLoginError" class="admin-login-error" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="adminApp" class="admin-shell hidden">
 
         <aside class="sidebar">
 
@@ -52,6 +77,7 @@
                 <div class="topbar-actions">
                     <span id="currentPageTitle">Dashboard</span>
                     <a href="../index.html" class="topbar-link">Open Website</a>
+                    <button type="button" class="secondary-btn logout-btn" id="logoutAdminBtn">Logout</button>
                 </div>
 
             </header>

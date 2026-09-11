@@ -1,7 +1,8 @@
 const STORAGE_KEYS = {
     PRODUCTS: "hmhProducts",
     ORDERS: "hmhOrders",
-    CART: "hmhPerfumesCart"
+    CART: "hmhPerfumesCart",
+    ADMIN_SESSION: "hmhAdminSession"
 };
 
 const DEMO_PRODUCTS = [
@@ -86,6 +87,8 @@ const state = {
 document.addEventListener("DOMContentLoaded", () => {
     initializeDefaults();
     bindUI();
+    bindAdminAuth();
+    initializeAdminAuth();
     renderDashboard();
     renderProducts();
     renderOrders();
@@ -131,6 +134,70 @@ function bindUI() {
     document.getElementById("productImage").addEventListener("change", handleImagePreview);
     document.getElementById("resetProductsBtn").addEventListener("click", resetDemoProducts);
     document.getElementById("clearAllDataBtn").addEventListener("click", clearAllData);
+}
+
+function bindAdminAuth() {
+    document.getElementById("adminLoginForm")?.addEventListener("submit", handleAdminLogin);
+    document.getElementById("logoutAdminBtn")?.addEventListener("click", handleAdminLogout);
+}
+
+function initializeAdminAuth() {
+    const adminSession = getStoredData(STORAGE_KEYS.ADMIN_SESSION);
+
+    if (adminSession && adminSession.adminId) {
+        showAdminApp();
+        return;
+    }
+
+    showAdminLogin();
+}
+
+function handleAdminLogin(event) {
+    event.preventDefault();
+
+    const adminId = document.getElementById("adminId")?.value.trim() || "";
+    const adminPassword = document.getElementById("adminPassword")?.value.trim() || "";
+    const loginError = document.getElementById("adminLoginError");
+
+    if (!adminId || !adminPassword) {
+        if (loginError) {
+            loginError.textContent = "Please enter both Admin ID and Password.";
+        }
+        return;
+    }
+
+    setStoredData(STORAGE_KEYS.ADMIN_SESSION, {
+        adminId,
+        loggedInAt: Date.now()
+    });
+
+    showAdminApp();
+}
+
+function handleAdminLogout() {
+    localStorage.removeItem(STORAGE_KEYS.ADMIN_SESSION);
+    showAdminLogin();
+}
+
+function showAdminApp() {
+    document.getElementById("adminLoginScreen")?.classList.add("hidden");
+    document.getElementById("adminApp")?.classList.remove("hidden");
+    const loginError = document.getElementById("adminLoginError");
+
+    if (loginError) {
+        loginError.textContent = "";
+    }
+}
+
+function showAdminLogin() {
+    document.getElementById("adminLoginScreen")?.classList.remove("hidden");
+    document.getElementById("adminApp")?.classList.add("hidden");
+    document.getElementById("adminLoginForm")?.reset();
+
+    const loginError = document.getElementById("adminLoginError");
+    if (loginError) {
+        loginError.textContent = "";
+    }
 }
 
 function showPanel(id) {

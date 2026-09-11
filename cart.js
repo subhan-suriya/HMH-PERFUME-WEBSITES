@@ -294,12 +294,26 @@ function checkoutWhatsApp() {
     }
 
 
+    const customerName = document.getElementById("customerName")?.value.trim();
+    const customerPhone = document.getElementById("customerPhone")?.value.trim();
+    const customerCity = document.getElementById("customerCity")?.value.trim();
+    const customerAddress = document.getElementById("customerAddress")?.value.trim();
+
+    if (!customerName || !customerPhone || !customerCity || !customerAddress) {
+        alert("Please complete your name, phone, city and delivery address before confirming your order.");
+        return;
+    }
+
+
     let message =
         "✨ *HMH PERFUMES - ORDER REQUEST* ✨\n\n";
 
 
-    message += "Hello HMH Perfumes! I would like to place an order:\n\n";
-
+    message += `Customer Name: ${customerName}\n`;
+    message += `Phone / WhatsApp: ${customerPhone}\n`;
+    message += `City: ${customerCity}\n`;
+    message += `Address: ${customerAddress}\n\n`;
+    message += "Selected products:\n\n";
 
     let total = 0;
 
@@ -347,10 +361,8 @@ function checkoutWhatsApp() {
         "━━━━━━━━━━━━━━━━━━\n\n";
 
     message +=
-        "Please confirm my order and delivery details. Thank you!";
+        "Please confirm my order and delivery details.";
 
-
-    // HMH WhatsApp number
 
     const phoneNumber = "923242763303";
 

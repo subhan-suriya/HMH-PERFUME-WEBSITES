@@ -814,12 +814,28 @@
                 button.addEventListener("click", () => {
 
                     const cart = getCart();
-
+                    const productCard = button.closest(".product-card");
+                    const collectionSection = button.closest(".collection-section");
                     const name =
-                        button.dataset.name;
+                        productCard?.dataset.name ||
+                        button.dataset.name ||
+                        productCard?.querySelector("h4")?.textContent.trim() ||
+                        "HMH Perfume";
 
                     const price =
-                        Number(button.dataset.price);
+                        Number(productCard?.dataset.price || button.dataset.price || 0);
+
+                    const image =
+                        productCard?.querySelector("img")?.src || "";
+
+                    const category =
+                        productCard?.dataset.category ||
+                        collectionSection?.id ||
+                        "";
+
+                    const size =
+                        productCard?.dataset.size ||
+                        "100ml";
 
                     const existing =
                         cart.find(
@@ -831,11 +847,12 @@
                         existing.quantity = Number(existing.quantity || 1) + 1;
                     } else {
                         cart.push({
+                            id: `${name}-${Date.now()}`,
                             name: name,
                             price: price,
-                            image: "",
-                            category: "",
-                            size: "",
+                            image: image,
+                            category: category,
+                            size: size,
                             quantity: 1
                         });
                     }
